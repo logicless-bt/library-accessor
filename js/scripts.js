@@ -1,3 +1,23 @@
-alert('Hello world');
-let favoriteFood = 'anything, I am not picky';
+/*let pokemonList = [];
+let sigilyph = {
+	name: 'Sigilyph',
+	height: 4,
+	types: ['psychic', 'flying']
+};
+
+let falinks = {
+	name: 'Falinks',
+	height: 9,
+	types: ['fighting']
+};
+
+let volcarona = {
+	name: 'Volcarona',
+	height: 5,
+	types: ['bug', 'fire']
+};*/
+
+alert('Hello World!');
+let favoriteFood = 'Fries';
 document.write(favoriteFood);
+
