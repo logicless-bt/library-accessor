@@ -1,4 +1,4 @@
-/*let pokemonList = [];
+let pokemonList = [];
 let sigilyph = {
 	name: 'Sigilyph',
 	height: 4,
@@ -15,9 +15,6 @@ let volcarona = {
 	name: 'Volcarona',
 	height: 5,
 	types: ['bug', 'fire']
-};*/
+};
 
-alert('Hello World!');
-let favoriteFood = 'Fries';
-document.write(favoriteFood);
 
