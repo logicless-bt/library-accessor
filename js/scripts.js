@@ -17,4 +17,5 @@ let volcarona = {
 	types: ['bug', 'fire']
 };
 
+pokemonList = [sigilyph, falinks, volcarona];
 
