@@ -1,21 +1,13 @@
-let pokemonList = [];
-let sigilyph = {
-	name: 'Sigilyph',
-	height: 4,
-	types: ['psychic', 'flying']
-};
+let pokemonList = [
+{name: 'Sigilyph', height: 4, types: ['psychic', 'flying']},
+{name: 'Falinks', height: 9, types: ['fighting']},
+{name: 'Volcarona', height: 5, types: ['bug', 'fire']}
+];
 
-let falinks = {
-	name: 'Falinks',
-	height: 9,
-	types: ['fighting']
-};
-
-let volcarona = {
-	name: 'Volcarona',
-	height: 5,
-	types: ['bug', 'fire']
-};
-
-pokemonList = [sigilyph, falinks, volcarona];
-
+for (let i = 0; i < pokemonList.length; i++) {
+	if (pokemonList[i].height < 5) {
+		document.write(`${pokemonList[i].name} \(height: ${pokemonList[i].height}\) -- that's a small one! `);
+	} else {
+		document.write(`${pokemonList[i].name} \(height: ${pokemonList[i].height}\) `);
+	}
+}
