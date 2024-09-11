@@ -27,11 +27,17 @@ button {
   border: none;
   font-family: inherit;
   background-color: #c9d8d1;
-  color: #dcf7f6;
+  color: #2b2b2b;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+button:hover, button:focus {
+	cursor: pointer;
+	opacity: 0.4;
 }
 
 li {

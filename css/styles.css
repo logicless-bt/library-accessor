@@ -34,11 +34,17 @@ button {
   border: none;
   font-family: inherit;
   background-color: var(--button-bg-color);
-  color: var(--button-color-light);
+  color: var(--button-color-dark);
   text-decoration: none;
   padding: var(--padding-less);
   border-radius: var(--border-radius-default);
   border-bottom: var(--border-bottom-default);
+  margin: 10px;
+}
+
+button:hover, button:focus {
+  cursor: pointer;
+  opacity: 0.4;
 }
 
 li {
