@@ -4,12 +4,14 @@ let pokemonList = [
 {name: 'Volcarona', height: 5, types: ['bug', 'fire']}
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-	if (pokemonList[i].height < 5) {
-		document.write(`${pokemonList[i].name} \(height: ${pokemonList[i].height}\) -- that's a small one! `);
+function readOut(element) {
+	if (element.height < 5) {
+		document.write(`${element.name} \(height: ${element.height}\) -- that's a small one! `);
 		document.write('<br\>');
 	} else {
-		document.write(`${pokemonList[i].name} \(height: ${pokemonList[i].height}\) `);
+		document.write(`${element.name} \(height: ${element.height}\) `);
 		document.write('<br\>');
 	}
 }
+
+pokemonList.forEach(readOut);
