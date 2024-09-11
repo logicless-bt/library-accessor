@@ -1,24 +1,17 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 input, texture, select, button {
   font-family: system-ui;
 }
 
-:root {
-	--link-color: #357b70;
-	--link-color-visited: #05676e;
-	--link-color-active: #489c79;
-	--button-bg-color: #c9d8d1;
-	--button-bg-color-secondary: #e0b354;
-	--button-color-dark: #2b2b2b;
-	--button-color-light: #dcf7f6;
-	--padding-much: 20px;
-	--padding-less: 10px;
-	--font-weight-heading: 700;
-	--border-radius-default: 3px;
-	--border-bottom-default: 2px solid rgba(0, 0, 0, 0.2);
-}
-
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body, header, footer {
@@ -33,12 +26,12 @@ body, header, footer {
 button {
   border: none;
   font-family: inherit;
-  background-color: var(--button-bg-color);
-  color: var(--button-color-light);
+  background-color: #c9d8d1;
+  color: #dcf7f6;
   text-decoration: none;
-  padding: var(--padding-less);
-  border-radius: var(--border-radius-default);
-  border-bottom: var(--border-bottom-default);
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 li {
@@ -53,12 +46,14 @@ li {
 /* only put media queries below here*/
 @media all and (max-width: 500px) {
 	.grid {
+		-ms-grid-columns: 1fr;
 		grid-template-columns: 1fr;
 	}
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
 	.grid {
+		-ms-grid-columns: 1fr 1fr;
 		grid-template-columns: 1fr 1fr;
 	}
 }
