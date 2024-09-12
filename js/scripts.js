@@ -18,10 +18,13 @@ let pokemonRepository = (function () {
 	]
 
 	function add (pokemon) {
-		if (typeof pokemon === object) {
+		if (typeof pokemon === object &&
+			'name' in pokemon &&
+			'height' in pokemon &&
+			'types' in pokemon) {
 			pokemonList.push(pokemon);
 		}else {
-			return 'Only Pokemon can be added.'
+			console.log('Pokemon must have a name, height, and type.')
 		}
 	}
 
@@ -34,7 +37,7 @@ let pokemonRepository = (function () {
 		let pokemonCurrent = document.querySelector('.pokemon-list');
 		let listItem = document.createElement('li');
 		let button = document.createElement('button');
-		button.addEventListener('click', showDetails(pokemon));
+		button.addEventListener('click', showDetails);
 		// for some reason the above code immediately displays the information
 
 		/*button.addEventListener('click', function(pokemon) {
@@ -42,7 +45,7 @@ let pokemonRepository = (function () {
 		})*/
 		//the above code works correctly, but does not use the predefined function
 
-		//changing content and class of buttons, event listener
+		//changing content and class of buttons
 		button.innerText = pokemon.name;
 		button.classList.add('pokemonButton');
 
