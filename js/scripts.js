@@ -37,7 +37,7 @@ let pokemonRepository = (function () {
 		let pokemonCurrent = document.querySelector('.pokemon-list');
 		let listItem = document.createElement('li');
 		let button = document.createElement('button');
-		button.addEventListener('click', showDetails);
+		button.addEventListener('click', function(){showDetails(pokemon)});
 		// for some reason the above code immediately displays the information
 
 		/*button.addEventListener('click', function(pokemon) {
