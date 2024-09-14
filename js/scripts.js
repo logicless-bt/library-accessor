@@ -58,7 +58,9 @@ let pokemonRepository = (function () {
 	}
 
 	function showDetails(pokemon) {
-		console.log(pokemon);
+		loadDetails(pokemon).then(function () {
+			console.log(pokemon);
+		});
 	}
 
 	function loadList() {
@@ -77,8 +79,18 @@ let pokemonRepository = (function () {
 		})
 	}
 
-	function loadDetails() {
-
+	function loadDetails(item) {
+		let url = item.detailsUrl;
+		return fetch(url).then(function (response) {
+			return response.json();
+		}).then(function (details) {
+			//adds details to items
+			item.imageUrl = details.sprites.front_default;
+			item.height = details.height;
+			item.types = details.types;
+		}).catch(function (e) {
+			console.error(e);
+		});
 	}
 
 	return {
@@ -90,16 +102,6 @@ let pokemonRepository = (function () {
 		loadList: loadList
 	};
 })();
-
-/*function readOut(element) {
-	if (element.height < 5) {
-		document.write(`${element.name} \(height: ${element.height}\) -- that's a small one! `);
-		document.write('<br\>');
-	} else {
-		document.write(`${element.name} \(height: ${element.height}\) `);
-		document.write('<br\>');
-	}
-}*/
 
 pokemon.Repository.loadList().then(function() {
 	pokemonRepository.getAll().forEach(function(pokemon) {
