@@ -1,33 +1,17 @@
 let pokemonRepository = (function () {
-	let pokemonList = [
-		{
-			name: 'Sigilyph', 
-			height: 4, 
-			types: ['psychic', 'flying']
-		},
-		{
-			name: 'Falinks', 
-			height: 9, 
-			types: ['fighting']
-		},
-		{
-			name: 'Volcarona', 
-			height: 5, 
-			types: ['bug', 'fire']
-		}
-	]
-
-	let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+	let pokemonList = []
+	let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
 
 	function add (pokemon) {
-		if (typeof pokemon === object &&
-			'name' in pokemon &&
-			'height' in pokemon &&
-			'types' in pokemon) {
+		if (typeof pokemon === "object" &&
+			"name" in pokemon && /*
+			"height" in pokemon &&
+			"types" in pokemon*/
+			"detailsUrl" in pokemon) {
 			pokemonList.push(pokemon);
 		}else {
-			console.log('Pokemon must have a name, height, and type.')
+			console.log("Pokemon must have a name, height, and type.")
 		}
 	}
 
@@ -37,20 +21,14 @@ let pokemonRepository = (function () {
 
 	function addListItem(pokemon) {
 		//setting up
-		let pokemonCurrent = document.querySelector('.pokemon-list');
-		let listItem = document.createElement('li');
-		let button = document.createElement('button');
-		button.addEventListener('click', function(){showDetails(pokemon)});
-		// for some reason the above code immediately displays the information
-
-		/*button.addEventListener('click', function(pokemon) {
-			console.log(pokemon);
-		})*/
-		//the above code works correctly, but does not use the predefined function
+		let pokemonCurrent = document.querySelector(".pokemon-list");
+		let listItem = document.createElement("li");
+		let button = document.createElement("button");
+		button.addEventListener("click", function(){showDetails(pokemon)});
 
 		//changing content and class of buttons
 		button.innerText = pokemon.name;
-		button.classList.add('pokemonButton');
+		button.classList.add("pokemonButton");
 
 		//placing button on list
 		listItem.appendChild(button);
@@ -74,20 +52,20 @@ let pokemonRepository = (function () {
 				};
 				add(pokemon);
 			});
-		}).catch(fuction (e) {
+		}).catch(function (e) {
 			console.error(e);
 		})
 	}
 
-	function loadDetails(item) {
-		let url = item.detailsUrl;
+	function loadDetails(pokemon) {
+		let url = pokemon.detailsUrl;
 		return fetch(url).then(function (response) {
 			return response.json();
 		}).then(function (details) {
 			//adds details to items
-			item.imageUrl = details.sprites.front_default;
-			item.height = details.height;
-			item.types = details.types;
+			pokemon.imageUrl = details.sprites.front_default;
+			pokemon.height = details.height;
+			pokemon.types = details.types;
 		}).catch(function (e) {
 			console.error(e);
 		});
@@ -103,7 +81,7 @@ let pokemonRepository = (function () {
 	};
 })();
 
-pokemon.Repository.loadList().then(function() {
+pokemonRepository.loadList().then(function() {
 	pokemonRepository.getAll().forEach(function(pokemon) {
 		pokemonRepository.addListItem(pokemon);
 	});
