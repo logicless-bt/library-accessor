@@ -2,7 +2,72 @@ let pokemonRepository = (function () {
 	let pokemonList = []
 	let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
+	//nested IIFE containing modal details
+	let allModal = (function() {
+		function showModal(title, text) {
+			let modalContainer = document.querySelector('#modal-container');
 
+			//clears all modal content, creates a new div, and assigns it the modal class
+			modalContainer.innerHTML = '';
+			let modal = document.createElement('div');
+			modal.classList.add('modal');
+
+			//sets up the close button
+			let closeButtonElement = document.createElement('button');
+			closeButtonElement.classList.add('modal-close');
+			closeButtonElement.innerText = 'Close';
+			closeButtonElement.addEventListener('click', hideModal);
+
+			//defines modal title
+			let titleElement = document.createElement('h1');
+			titleElement = title;
+
+			//defines modal content
+			let contentElement = document.createElement('p');
+			contentElement = text;
+
+			//appends elements to modal and modal to container
+			modal.appendChild(closeButtonElement);
+			modal.appendChild(titleElement);
+			modal.appendChild(contentElement);
+			modalContainer.appendChild(modal);
+
+			//makes modal visible
+			modalContainer.classList.add('is-visible');
+
+			modalContainer.classList.addEventListener('click', (e) => {
+				let target = e.target;
+				if(target === modalContainer) {
+					hideModal();
+				}
+			});
+		}
+
+		document.querySelector('#show-modal').addEventListener('click', () => 
+		{
+			showModal('Modal Title', 'This is the modal content...');
+		});
+
+		let dialogPromiseReject; // to be set up later
+
+		function hideModal() {
+			let modalContainer = document.querySelector('#modal-container');
+			modalContainer.classList.remove('is-visible');
+
+			/*if(dialogPromiseReject) {
+				dialogPromiseReject();
+				dialogPromiseReject = null;
+			}*/
+		}
+
+		return {
+			showModal: showModal;
+			hideModal: hideModal
+		}
+	})(); //end nested modal IIFE, return to pokemonList
+
+
+	//function to accept input to the list
 	function add (pokemon) {
 		if (typeof pokemon === "object" &&
 			"name" in pokemon && /*
