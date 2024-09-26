@@ -101,7 +101,7 @@ li {
   background: rgba(0, 0, 0, 0.5);
   
   /* to show it above other content */
-  z-index: 999; 
+  z-index: 5; 
   
   /* to allow scrolling if the screen is not high enough*/
   overflow: auto; 

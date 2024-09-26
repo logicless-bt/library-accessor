@@ -5,15 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Library Accessor</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="css/styles.production.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-  	<button id="show-modal">Show modal</button>
-  	<div id='modal-container'>
-      
-    </div>
 
+  	<div class="modal-container">
+        <div class="modal-header">
+            <h5 class="modal-title" id="pokemon-modal-label">Pokemon Details</h5>
+            <!--<button type="button" class="close">this</button>-->
+        </div>
+            <div class="modal-body">
+              <img id="pokemon-image" src="#" alt="Pokemon Image" class="img-fluid">
+              <p id="pokemon-height"></p>
+            </div>
+            <div class="modal-footer">
+              <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+            </div>
+        </div>
   	<ul class="pokemon-list">
 
   	</ul>

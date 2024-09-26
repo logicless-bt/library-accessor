@@ -1,5 +1,5 @@
 let pokemonRepository = (function () {
-	let pokemonList = []
+	let pokemonList = [];
 	let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
 	//function to accept input to the list
@@ -24,7 +24,9 @@ let pokemonRepository = (function () {
 		let pokemonCurrent = document.querySelector(".pokemon-list");
 		let listItem = document.createElement("li");
 		let button = document.createElement("button");
-		button.addEventListener("click", function(){showDetails(pokemon)});
+		button.addEventListener("click", function(event) {
+			pokemonRepository.showDetails(pokemon);
+		});
 
 		//changing content and class of buttons
 		button.innerText = pokemon.name;
@@ -36,7 +38,7 @@ let pokemonRepository = (function () {
 	}
 
 	function showModal(title, text, img) {
-		let titleElement = document.querySelector('#pokemonModalLabel');
+		let titleElement = document.querySelector('#pokemon-modal-label');
 		let contentElement = document.querySelector('.modal-body');
 		let pkHeight = document.querySelector('#pokemon-height');
 		let pkImage = document.querySelector('#pokemon-image')
@@ -53,7 +55,7 @@ let pokemonRepository = (function () {
 				`Height: ${pokemon.height}`,
 				pokemon.imageUrl
 			);
-			$('#pokemon-modal').modal('show');
+			//$('#pokemon-modal').modal('show');
 		});
 	}
 
@@ -64,7 +66,7 @@ let pokemonRepository = (function () {
 			json.results.forEach(function (item) {
 				let pokemon = {
 					name: item.name,
-					detailsUrl: item.url
+					detailsUrl: item.url,
 				};
 				add(pokemon);
 			});
