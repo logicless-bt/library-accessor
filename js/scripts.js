@@ -77,7 +77,22 @@ let pokemonRepository = (function () {
 
 	function hideModal() {
 	    modalContainer.classList.remove('is-visible');
-	  }
+	}
+
+	//hitting escape exits modal
+	 window.addEventListener('keydown', (e) => {
+	    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+	      hideModal();  
+	    }
+	  });
+
+	 //exits the modal when clicking away
+	 modalContainer.addEventListener('click', (e) => {
+	    let target = e.target;
+	    if (target === modalContainer) {
+	      hideModal();
+	    }
+	  });
 
 	function showDetails(pokemon) {
 		pokemonRepository.loadDetails(pokemon).then(function () {
