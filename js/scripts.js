@@ -49,7 +49,7 @@ let pokemonRepository = (function () {
 	}
 
 	function showDetails(pokemon) {
-		loadDetails(pokemon).then(function () {
+		pokemonRepository.loadDetails(pokemon).then(function () {
 			showModal(
 				pokemon.name,
 				`Height: ${pokemon.height}`,
