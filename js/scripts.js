@@ -55,7 +55,7 @@ let pokemonRepository = (function () {
 				`Height: ${pokemon.height}`,
 				pokemon.imageUrl
 			);
-			//$('#pokemon-modal').modal('show');
+			$('#pokemon-modal').modal('show');
 		});
 	}
 
