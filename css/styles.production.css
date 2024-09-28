@@ -71,7 +71,7 @@ li {
 }
 
 /* ID styling below here */
-#modal-container {
+/*#modal-container {
 	display: none;
 }
 
@@ -85,13 +85,34 @@ li {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   
-  /* to show it above other content */
-  z-index: 5; 
   
-  /* to allow scrolling if the screen is not high enough*/
+  z-index: 5; 
   overflow: auto; 
   
-  /* this is used to center the modal */
+  
+  display: grid;
+  text-align: center;
+}*/
+
+#modal-modal {
+  display: none;
+}
+
+#modal-modal.is-visible {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  
+  
+  z-index: 5; 
+  overflow: auto; 
+  
+  
   display: grid;
   text-align: center;
 }
