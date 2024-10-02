@@ -46,31 +46,7 @@ let pokemonRepository = (function () {
 
 	//let modalContainer = document.querySelector('.modal');
 	function showModal(title, text, img) {
-		//modalContainer.innerHTML = '';
-	    /*let modal = document.createElement('div');
-	    modal.classList.add('modal');
-
-	    let closeButtonElement = document.createElement('button');
-	    closeButtonElement.classList.add('modal-close');
-	    closeButtonElement.innerText = 'Close';
-	    closeButtonElement.addEventListener('click', hideModal);
-
-	    let titleElement = document.createElement('h1');
-	    titleElement.innerText = title;
-
-	    let contentElement = document.createElement('p');
-	    contentElement.innerText = text;
-
-	    let imageElement = document.createElement('img');
-	    imageElement.src = img;
-
-	    modal.appendChild(closeButtonElement);
-	    modal.appendChild(titleElement);
-	    modal.appendChild(contentElement);
-	    modal.appendChild(imageElement);
-	    modalContainer.appendChild(modal);
-	    
-	    modalContainer.classList.add('is-visible');*/
+		
 
 	    //assign modal elements
 	    let modalBody = $('.modal-body');
@@ -80,7 +56,7 @@ let pokemonRepository = (function () {
 	    //clear modal elements
 	    modalBody.empty();
 	    modalTitle.empty();
-	    //modalHeader.empty();
+	    
 
 	    //creating the title element (name)
 	    let titleElement = ('<h1>' + title + '</h1>');
@@ -98,25 +74,6 @@ let pokemonRepository = (function () {
 	    modalBody.append(imageElement);
 	    modalBody.append(contentElement);
 	}
-
-	/*function hideModal() {
-	    modalContainer.classList.remove('is-visible');
-	}
-
-	//hitting escape exits modal
-	 window.addEventListener('keydown', (e) => {
-	    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-	      hideModal();  
-	    }
-	  });
-
-	 //exits the modal when clicking away
-	 modalContainer.addEventListener('click', (e) => {
-	    let target = e.target;
-	    if (target === modalContainer) {
-	      hideModal();
-	    }
-	  });*/
 
 	function showDetails(pokemon) {
 		pokemonRepository.loadDetails(pokemon).then(function () {
