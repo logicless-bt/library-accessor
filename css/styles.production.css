@@ -42,7 +42,7 @@ li {
 	list-style-type: none;
 }
 
-.modal {
+/*.modal {
   margin: auto;
   display: inline-block;
   box-sizing: border-box;
@@ -68,7 +68,7 @@ li {
 
 .modal p {
   margin-bottom: 0;
-}
+}*/
 
 /* ID styling below here */
 /*#modal-container {
@@ -94,7 +94,7 @@ li {
   text-align: center;
 }*/
 
-#modal-modal {
+/*#modal-modal {
   display: none;
 }
 
@@ -115,7 +115,7 @@ li {
   
   display: grid;
   text-align: center;
-}
+}*/
 
 
 /* only put media queries below here*/
