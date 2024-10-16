@@ -26,7 +26,7 @@ let pokemonRepository = (function () {
 		listItem.classList.add('list-group-item');
 		//let button = $('<button data-toggle-"modal" data-target="poke-modal"</button>');
 		let button = document.createElement('button');
-		button.addEventListener("click", function(event) {
+		button.addEventListener("click", function() {
 			pokemonRepository.showDetails(pokemon);
 		});
 
@@ -51,7 +51,7 @@ let pokemonRepository = (function () {
 	    //assign modal elements
 	    let modalBody = $('.modal-body');
 	    let modalTitle = $('.modal-title');
-	    let modalHeader = ('.modal-header');
+	    //let modalHeader = ('.modal-header');
 
 	    //clear modal elements
 	    modalBody.empty();
