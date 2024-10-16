@@ -8,11 +8,12 @@ Organized list of Pokemon
 Interactive buttons that display modals with a Pokemon's image and height
 
 Technology
-HTML 
 
-CSS 
+HTML for structure and logic
 
-Javascript 
+CSS for styling
+
+Javascript for user interactivity
 
 Bootstrap 
 
