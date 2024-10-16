@@ -60,6 +60,7 @@ li {
 @media all and (max-width: 750px) {
 	.grid {
 		grid-gap: 10px;
+		grid-template-columns: 1fr 1fr;
 	}
 	.grid__item:last-child {
 		grid-column: auto / auto;
