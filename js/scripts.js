@@ -1,17 +1,17 @@
 let pokemonRepository = (function () {
 	let pokemonList = [];
-	let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=151";
+	let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
-	//function to accept input to the list
+	//accepts input to the list
 	function add (pokemon) {
-		if (typeof pokemon === "object" &&
-			"name" in pokemon && /*
-			"height" in pokemon &&
-			"types" in pokemon*/
-			"detailsUrl" in pokemon) {
+		if (typeof pokemon === 'object' &&
+			'name' in pokemon && /*
+			'height' in pokemon &&
+			'types' in pokemon*/
+			'detailsUrl' in pokemon) {
 			pokemonList.push(pokemon);
 		}else {
-			console.log("Pokemon must have a name, height, and type.")
+			console.log('Pokemon must have a name, height, and type.')
 		}
 	}
 
@@ -21,12 +21,12 @@ let pokemonRepository = (function () {
 
 	function addListItem(pokemon) {
 		//setting up, including bootstrap list classes
-		let pokemonCurrent = document.querySelector(".pokemon-list");
-		let listItem = document.createElement("li");
+		let pokemonCurrent = document.querySelector('.pokemon-list');
+		let listItem = document.createElement('li');
 		listItem.classList.add('list-group-item');
-		//let button = $('<button data-toggle-"modal" data-target="poke-modal"</button>');
+		//let button = $('<button data-toggle-'modal' data-target='poke-modal'</button>');
 		let button = document.createElement('button');
-		button.addEventListener("click", function() {
+		button.addEventListener('click', function() {
 			pokemonRepository.showDetails(pokemon);
 		});
 
